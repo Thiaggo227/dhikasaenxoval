@@ -1,0 +1,1026 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Estilo para os elementos de informação no topo do menu mobile (visíveis em desktop, se preferir) */
+.info-mobile-top {
+  display: flex;
+  /* Para alinhar o texto de entrega e o link da loja na mesma linha */
+  justify-content: center;
+  gap: 20px;
+  /* Espaço entre as informações */
+  padding: 5px 0;
+}
+
+.pLink-info {
+  font-family: "Montserrat", sans-serif;
+  color: #400c0c62;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  text-decoration: none;
+  /* Garante que o link da loja não tenha sublinhado padrão */
+}
+
+/* Estilo para o link "Conheça nossa loja física" */
+#link-loja {
+  transition: 0.5s;
+  /* Você pode adicionar o efeito hover do #link aqui também se quiser */
+}
+
+#link-loja:hover {
+  color: #400c0c;
+}
+
+/* Os estilos existentes de .pLink e #link no seu CSS original são mantidos se você os usar em outros lugares. */
+
+.topo {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  height: 50px;
+  background-color: #514029;
+  box-shadow: 0 2px 8px #00000033;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.marqueSimple {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.text10x {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  display: inline-block;
+  padding-left: 100%;
+  font-weight: 700;
+  transform: translateX(0);
+  animation: slide-left 20s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(10);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#logo {
+  height: 105px;
+  width: 205px;
+  margin-top: -25px;
+  margin-right: 170px;
+}
+
+ul {
+  display: flex;
+  margin-top: 11px;
+  list-style: none;
+  gap: 20px;
+}
+
+li a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.4s;
+  display: inline-block;
+}
+
+li a:hover {
+  color: #ccff00;
+}
+
+.imgCarrosel {
+  margin-top: 30px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imgCarrosel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.imgCarrosel img.ativa {
+  opacity: 1;
+}
+
+#iconeMenu {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+#menu {
+  color: #fff;
+  font-size: 30px;
+  /* Aumentado para melhor toque em mobile */
+  margin-left: 20px;
+  /* Ajustado para melhor posicionamento */
+  margin-top: 10px;
+  display: none;
+  /* Inicialmente oculto (será mostrado no mobile) */
+}
+
+.areaMenu {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.703);
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  margin-top: 50px;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 900;
+}
+
+.menus {
+  letter-spacing: 2px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+
+.pLink {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #400c0c62;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  margin-top: 2px;
+}
+
+#link {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #400c0c62;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: 0.5s;
+}
+
+#link:hover {
+  color: #400c0c;
+}
+
+#link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+#link:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.top-text {
+  color: #400c0c;
+  font-family: "Playwrite DE SAS", cursive;
+  display: block;
+  transition: opacity 0.8s ease;
+}
+
+.bottom-text {
+  display: block;
+  color: #ff0000;
+  transition: opacity 0.8s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.textPrincipal {
+  font-family: 'Prata', serif;
+  font-weight: normal;
+  font-size: 70px;
+  text-transform: uppercase;
+  color: #400c0c;
+  margin-top: 15%;
+  margin-left: 30px;
+}
+
+.spanText {
+  font-family: 'Prata', serif;
+  font-weight: normal;
+  color: #86960bca;
+}
+
+.span10x {
+  color: #86960bca;
+}
+
+.imgWhats {
+  display: flex;
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  z-index: 1000;
+}
+
+.imgWhats img {
+  height: 80px;
+  animation: flutuar 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.textCama,
+.textBanho {
+  font-size: 50px;
+  margin-top: 90px;
+  margin-left: 70px;
+}
+
+.textMesa {
+  font-size: 50px;
+  margin-top: 90px;
+  margin-left: 50px;
+}
+
+.textPija {
+  font-size: 50px;
+  margin-top: 90px;
+  margin-left: 18%;
+}
+
+.textTrav {
+  color: #400c0c62;
+  font-family: 'Prata', serif;
+  font-size: 25px;
+  margin-left: 70px;
+  margin-top: 50px;
+}
+
+.textPresente {
+  color: #400c0c62;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-left: 118px;
+  margin-top: 50px;
+}
+
+.imgGerada {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#imgAcqua {
+  height: 500px;
+  width: 650px;
+  margin: 0 20px;
+}
+
+#imgGourmet {
+  height: 350px;
+  width: 450px;
+}
+
+.pTrav,
+.pCama {
+  margin-top: -85px;
+  z-index: 700;
+}
+
+.pMesa {
+  margin-top: -8px;
+}
+
+.pMesaLoja {
+  color: #400c0c62;
+  margin-left: 55px;
+  margin-top: -10px;
+}
+
+.container {
+  margin-top: -15px;
+}
+
+.container,
+.box,
+.boxLencol,
+.boxPresente,
+.boxBanho {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.boxMesa {
+  margin-top: 25px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.box,
+.boxLencol,
+.boxPresente {
+  margin-top: 30px;
+}
+
+.heroTrav,
+.heroPija,
+.heroLencol,
+.heroPresente,
+.heroMesa,
+.heroBanho {
+  display: flex;
+  gap: 100px;
+}
+
+.areaTrav,
+.areaPija,
+.areaLencol,
+.areaPresente,
+.areaMesa,
+.areaBanho {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#imgTrav,
+#imgLencol,
+#imgBanho {
+  height: 390px;
+  width: 550px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#imgPija {
+  height: 590px;
+  width: 380px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+#imgPresente {
+  height: 290px;
+  width: 270px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+#imgMesa {
+  height: 300px;
+  width: 345px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+#imgLencol {
+  border-radius: 10px;
+}
+
+#imgTrav:hover {
+  transform: scale(1.03);
+}
+
+#imgPija:hover {
+  transform: scale(1.03);
+}
+
+#imgLencol:hover {
+  transform: scale(1.03);
+}
+
+#imgPresente:hover {
+  transform: scale(1.03);
+}
+
+#imgMesa:hover {
+  transform: scale(1.03);
+}
+
+#imgBanho:hover {
+  transform: scale(1.03);
+}
+
+#btnComprar {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+}
+
+#btnComprar:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(37, 211, 102, 0.5);
+}
+
+.pBio {
+  color: #00000092;
+  margin-left: 70px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 40px;
+}
+
+/* style.css */
+
+/* Rodapé Profissional */
+.site-footer {
+  margin-top: 70px;
+  background-color: #514029;
+  /* Cor de fundo do seu topo/tema */
+  color: #ffffffd2;
+  /* Cor de texto padrão */
+  padding: 40px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.containerFooter {
+  max-width: 1200px;
+  /* Aumenta a largura máxima */
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que as colunas quebrem em telas menores */
+  justify-content: space-around;
+  /* Distribui o espaço entre as duas colunas */
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ffffff33;
+  /* Separador sutil */
+}
+
+.footer-col {
+  /* Ajustado para que as 2 colunas ocupem cerca de 45% do espaço cada, centralizando-as */
+  flex-basis: 45%;
+  min-width: 300px;
+  /* Garante um tamanho mínimo para melhor leitura */
+}
+
+.footer-col h3 {
+  color: #ffffff;
+  /* Cor de destaque para os títulos */
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Coluna de Links (NÃO USADA, MAS MANTIDA POR SEGURANÇA SE VOCÊ TIVER OUTROS ELEMENTOS) */
+/* Removida a seção inteira pois o HTML não a contém mais. */
+
+/* Coluna de Contato */
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  /* Alinha o ícone e o texto no topo */
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.footer-contact i {
+  color: #ffffff;
+  font-size: 13px;
+  margin-top: 2px;
+  /* Pequeno ajuste visual para alinhar com o texto */
+}
+
+/* Links Sociais */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #ffffff;
+  font-size: 13px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #6fff65;
+}
+
+/* Rodapé Inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.copyright strong {
+  color: #c0d902ca;
+  font-weight: 600;
+}
+
+.payments {
+  font-style: italic;
+  color: #ffffffa2;
+}
+
+
+/* === Responsividade para o Footer === */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    /* Colunas empilhadas em mobile */
+    text-align: center;
+  }
+
+  .footer-col {
+    flex-basis: 100%;
+    min-width: auto;
+  }
+
+  .footer-contact p {
+    justify-content: center;
+    /* Centraliza o texto de contato */
+  }
+
+  .footer-contact i {
+    margin-top: 0;
+  }
+
+  .social-links {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ====== EFEITO DE AMPLIAR IMAGEM ====== */
+.modal {
+  display: none;
+  /* escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  animation: zoom 0.4s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Botão de fechar (X) */
+.fechar {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #ccc;
+}
+
+#iconeWhatsapp,
+#iconeInstagram {
+  font-size: 40px;
+}
+
+/* Desktop / Telas maiores (>= 992px) */
+@media (min-width: 992px) {
+  .topo {
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  #logo {
+    margin-right: 0;
+  }
+
+  .topo ul {
+    display: flex;
+    /* Garante que a nav principal apareça em desktop */
+    margin-right: 150px;
+    /* Ajuste visual para centralizar/posicionar */
+    position: static;
+  }
+
+  #menu {
+    display: none;
+    /* Esconde o ícone de menu em desktop */
+  }
+
+  .marqueSimple {
+    margin-top: 5px;
+    /* Ajuste para o texto não ficar colado */
+  }
+
+  /* ... mantenha os outros estilos que você já tinha no desktop */
+}
+
+/* Tablets (Max 991px) */
+@media (max-width: 991px) {
+  #logo {
+    margin-right: 0;
+    margin-top: -15px;
+    height: 90px;
+    width: 175px;
+  }
+
+  .topo {
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  ul {
+    display: none;
+    /* Oculta a navegação principal em tablets */
+  }
+
+  #menu {
+    display: block;
+    /* Mostra o ícone de menu */
+  }
+
+  .textPrincipal {
+    font-size: 50px;
+    margin-top: 80px;
+    margin-left: 20px;
+    line-height: 1.1;
+    display: none;
+  }
+
+  .imgCarrosel {
+    height: 60vh;
+    /* Altura menor para carrossel em tablets */
+  }
+
+  .pBio {
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Ajuste geral do espaçamento para os blocos de produto */
+  .textTrav,
+  .textCama,
+  .textBanho {
+    margin-left: 20px;
+  }
+
+  .textMesa,
+  .textPija,
+  .textPresente {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .pMesaLoja {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Produtos: Flex-wrap ou Stacked */
+  .heroTrav,
+  .heroPija,
+  .heroLencol,
+  .heroPresente,
+  .heroMesa,
+  .heroBanho {
+    flex-direction: column;
+    /* Empilha as colunas de produtos */
+    gap: 50px;
+  }
+
+  .areaTrav,
+  .areaPija,
+  .areaLencol,
+  .areaPresente,
+  .areaMesa,
+  .areaBanho {
+    align-items: center;
+    /* Centraliza os produtos dentro de suas áreas */
+  }
+
+  /* Ajuste de largura/altura das imagens para tablets */
+  #imgTrav,
+  #imgLencol,
+  #imgBanho {
+    width: 90%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  #imgPija {
+    width: 50%;
+    height: auto;
+    max-width: 380px;
+  }
+
+  #imgPresente {
+    width: 60%;
+    height: auto;
+    max-width: 270px;
+  }
+
+  #imgMesa {
+    width: 90%;
+    height: auto;
+    max-width: 345px;
+  }
+
+  .imgGerada {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #imgAcqua,
+  #imgGourmet {
+    width: 90%;
+    height: auto;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .topo ul {
+    width: 75%;
+    gap: 20px;
+  }
+
+  .topo ul li a {
+    font-size: 15px;
+  }
+
+  #menu {
+    font-size: 28px;
+  }
+}
+
+/* Rodapé em Mobile (Mantido o original, que já era bom) */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    /* Colunas empilhadas em mobile */
+    text-align: center;
+  }
+
+  .footer-col {
+    flex-basis: 100%;
+    min-width: auto;
+  }
+
+  .footer-contact p {
+    justify-content: center;
+    /* Centraliza o texto de contato */
+  }
+
+  .footer-contact i {
+    margin-top: 0;
+  }
+
+  .social-links {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ====== EFEITO DE AMPLIAR IMAGEM ====== */
+.modal {
+  display: none;
+  /* escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  animation: zoom 0.4s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Botão de fechar (X) */
+.fechar {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #ccc;
+}
+
+#iconeWhatsapp,
+#iconeInstagram {
+  font-size: 40px;
+}
+
+@media (max-width: 991px) {
+  #menu {
+    display: block;
+    cursor: pointer;
+    font-size: 32px;
+    color: #fff;
+    z-index: 1001;
+    transition: 0.3s;
+  }
+
+  .topo ul {
+    position: fixed;
+   top: 0;
+    left: -100%;
+    height: 50vh;
+    width: 50%;
+    background-color: #514029;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.939);
+    align-items: flex-start;
+    padding-left: 35px; /* 👈 aumenta o espaço à esquerda */
+    gap: 30px; /* mais espaço entre os links */
+    z-index: 900; /* Maior que 1000 do .topo e .areaMenu */
+  }
+
+
+  .topo ul.ativo {
+    left: 0;
+  }
+
+  .topo ul li {
+    list-style: none;
+  }
+
+  .topo ul li a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .topo ul li a:hover {
+    color: #c0d902ca;
+    transform: scale(1.05);
+  }
+
+  /* Quando o menu abre, o ícone é coberto */
+  .topo ul.ativo~#menu {
+    position: relative;
+    z-index: 0;
+  }
+}
